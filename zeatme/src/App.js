@@ -1,7 +1,8 @@
 import React from 'react'
 import { Navigator, View, Text } from 'react-native'
 
-import Header from './components/Header'
+import Homepage from './components/Homepage'
+import Categories from './components/Categories'
 
 class App extends React.Component {
   render () {
@@ -11,17 +12,14 @@ class App extends React.Component {
         renderScene={(route, navigator) => {
           switch (route.title) {
             case 'home':
-              return <Header navigator={navigator} />
+              return <Homepage navigator={navigator} />
             case 'categories':
               return <Categories navigator={navigator} />
             default:
               return <Header />
           }
         }}
-        />
-      <View>
-        <Header />
-      </View>
+      />
     )
   }
 }
